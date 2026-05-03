@@ -35,10 +35,10 @@ sendButton.addEventListener('click', () => {
     if (message) {
         // 1. ඔයාගේ වෙබ්සයිට් එකේ ලින්ක් එක ගන්නවා (Local දුවද්දි localhost එයි, Host කරාම ඒ ලින්ක් එක එයි)
         // ඔයාට ඕන නම් window.location.origin අයින් කරලා කෙලින්ම "https://ඔයාගේ-github-ලින්ක්.com" කියලා දාන්නත් පුළුවන්
-        const websiteUrl = "https://yasiruc.github.io/Pearl-Stone/"; 
+        const websiteUrl = window.location.href; 
         
         // 2. කස්ටමර් ගහපු මැසේජ් එකට යටින් අර ලින්ක් එක එකතු කරනවා (\n\n වලින් පේළි දෙකක් පල්ලෙහාට යනවා)
-        const finalMessage = message + "\n\n" + websiteUrl;
+        const finalMessage = message + "\n" + websiteUrl;
 
         // 3. අර අලුත් finalMessage එක WhatsApp ලින්ක් එකට දානවා
         const url = `https://wa.me/${phone}?text=${encodeURIComponent(finalMessage)}`;
